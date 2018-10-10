@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Product Hunt | Login {% endblock %}
+
+{%block content %}
+{% if error %}
+<p class="alert alert-danger">{{ error }}</p>
+{% endif %}
+
+<h1>Login</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-4-sm">
+            <form action="{% url 'login' %}" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" name="username" aria-describedby="usernameHelp" placeholder="Enter user name">
+                </div>
+                <div class="form-group">
+                    <label for="Password">Password</label>
+                    <input type="password" class="form-control" name="password" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+{%endblock %}
