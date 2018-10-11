@@ -32,6 +32,7 @@
                 <div class="navbar-nav ml-auto">
                     {% if user.is_authenticated %}
                     <p class="nav-item nav-link">Hi {{ user.username }}&nbsp;&nbsp;|</p>
+                    <a class="nav-item nav-link" href="{% url 'create' %}">Create</a>
                     <a class="nav-item nav-link" href="javascript:{document.getElementById('logout').submit()}" onclick="">Logout</a>
                     <form id="logout" action="{% url 'logout' %}" method="POST">
                         {% csrf_token %}

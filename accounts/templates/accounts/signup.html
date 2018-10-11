@@ -8,16 +8,16 @@
 <p class="alert alert-danger">{{ error }}</p>
 {% endif %}
 
-<h1>Sign Up</h1>
 <div class="container">
     <div class="row">
-        <div class="col-4-sm">
+        <div class="col-md-6 mx-auto">
+            <h1>Sign Up</h1>
             <form action="{% url 'signup' %}" method="POST">
                 {% csrf_token %}
                 <div class="form-group">
                     <label for="username">Username</label>
-                    <input type="text" class="form-control" name="username" aria-describedby="usernameHelp" placeholder="Enter user name">
-                    <small id="usernameHelp" class="form-text text-muted">We'll never share your information with anyone else.</small>
+                    <input type="email" class="form-control" name="username" aria-describedby="usernameHelp" placeholder="Enter valid e-mail" required>
+                    <small id="usernameHelp" class="form-text text-muted">We'll never share your e-mail with anyone else.</small>
                 </div>
                 <div class="form-group">
                     <label for="Password1">Password</label>
